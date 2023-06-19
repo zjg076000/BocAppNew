@@ -1,0 +1,119 @@
+unit DBContext.FirDAC;
+
+interface
+uses System.Classes,System.SysUtils,
+FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Phys.SQLiteDef,
+  FireDAC.ConsoleUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.SQLite, Data.DB,
+  FireDAC.Comp.Client;
+
+
+Type
+
+  IDBContext = interface
+    ['{688E0613-EFE0-495A-9906-0767E9038774}']
+  end;
+
+  TDBContextFirDAC=class(TInterfacedObject,IDBContext)
+  private
+    FDConnection: TFDConnection;
+    FDPhysSQLiteDriverLink: TFDPhysSQLiteDriverLink;
+    FDGUIxWaitCursor: TFDGUIxWaitCursor;
+
+  public
+    constructor create;
+    destructor Destroy;override;
+    class function New:IDBContext;
+
+     function Connected: boolean;override;
+     function Connected(Value:boolean):IDBContext;Override;
+     function InStransaction:Boolean;
+     function StartStransaction:IDBContext;
+     function Commit:IDBContext;
+     function Rollback:IDBContext;
+
+     function GetQuery:TCompenent;
+     function Paginate(aPage£¬aLimit:Integer):string;
+     function GenGuid:String;
+     function CheckDB:String;
+
+
+  end;
+
+
+implementation
+
+{ TDBContextFirDAC }
+
+function TDBContextFirDAC.CheckDB: String;
+begin
+
+end;
+
+function TDBContextFirDAC.Commit: IDBContext;
+begin
+   Result:=self;
+   FDconnection.Commit;
+end;
+
+function TDBContextFirDAC.Connected(Value: boolean): IDBContext;
+begin
+  Result:=self;
+  FDconnection.Connected:=value;
+end;
+
+function TDBContextFirDAC.Connected: boolean;
+begin
+   Result:=FDConnection.Connected;
+
+end;
+
+constructor TDBContextFirDAC.create;
+begin
+
+end;
+
+destructor TDBContextFirDAC.Destroy;
+begin
+
+  inherited;
+end;
+
+function TDBContextFirDAC.GenGuid: String;
+begin
+
+end;
+
+function TDBContextFirDAC.GetQuery: TCompenent;
+begin
+
+end;
+
+function TDBContextFirDAC.InStransaction: Boolean;
+begin
+
+end;
+
+class function TDBContextFirDAC.New: IDBContext;
+begin
+
+end;
+
+function TDBContextFirDAC.Paginate(aPage£¬aLimit: Integer): string;
+begin
+
+end;
+
+function TDBContextFirDAC.Rollback: IDBContext;
+begin
+
+end;
+
+function TDBContextFirDAC.StartStransaction: IDBContext;
+begin
+
+end;
+
+end.

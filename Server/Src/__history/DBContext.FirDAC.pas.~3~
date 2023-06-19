@@ -1,0 +1,54 @@
+unit DBContext.FirDAC;
+
+interface
+uses System.Classes,System.SysUtils,
+FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Phys.SQLiteDef,
+  FireDAC.ConsoleUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.SQLite, Data.DB,
+  FireDAC.Comp.Client;
+
+
+Type
+
+  IDBContext = interface
+    ['{688E0613-EFE0-495A-9906-0767E9038774}']
+  end;
+
+  TDBContextFirDAC=class(TInterfacedObject,IDBContext)
+  private
+    FDConnection: TFDConnection;
+    FDPhysSQLiteDriverLink: TFDPhysSQLiteDriverLink;
+    FDGUIxWaitCursor: TFDGUIxWaitCursor;
+
+  public
+    constructor create;
+    destructor Destroy;override;
+    class function New:IDBContext;
+
+
+  end;
+
+
+implementation
+
+{ TDBContextFirDAC }
+
+constructor TDBContextFirDAC.create;
+begin
+
+end;
+
+destructor TDBContextFirDAC.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TDBContextFirDAC.New: IDBContext;
+begin
+
+end;
+
+end.

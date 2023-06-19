@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\Server"/>
+    <File Path="..\Src"/>
+    <File Path="..\Src\BaseRoute.pas"/>
+    <File Path="..\Src\JsonResult.pas"/>
+    <File Path="..\Src\DBContext.FirDAC.pas"/>
+  </ProjectSortOrder>  <Transactions>
+    <Transaction>2023/06/19 12:37:06.447,=E:\02.Delphi开发资料\00.自己开发项目资料\01.BocGi资料管理\BocAppNew\Server\Project\Unit1.pas</Transaction>
+    <Transaction>2023/06/19 12:49:38.873,E:\02.Delphi开发资料\00.自己开发项目资料\01.BocGi资料管理\BocAppNew\Server\Src\DBContext.FirDAC.pas=E:\02.Delphi开发资料\00.自己开发项目资料\01.BocGi资料管理\BocAppNew\Server\Project\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

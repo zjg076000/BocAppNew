@@ -1,0 +1,106 @@
+unit JsonResult;
+
+{$ifdef fpc }
+    {$mode delphi}
+{$endif}
+
+interface
+uses
+
+{$ifdef fpc}
+ classes,sysutils,
+ {$else}
+ system.Classes,System.SysUtils,
+ {$endif}
+
+ jsons,
+  //J4dl,
+ // DataSet.Serialize,
+//  system.JSON,
+// vcl.Forms,
+  Horse;
+
+type
+
+  IJsonResult = interface
+      ['{E26EF62A-10FF-4C1F-A839-30A145CC2875}']
+  end;
+
+  TJsonResult =class(TInterfacedObject,IJsonResult)
+ private
+   FJson:TJsonObject;
+  public
+    constructor  create(aSuccess:Boolean);
+    destructor destroy; override;
+    class function new(aSource:Boolean):IJsonResult;
+
+    function Success(aValue:Boolean):IJsonResult;
+    function StatusCode(aValue:Integer):IJsonResult;
+    function Message(aValue:string):IJsonResult;
+    function Data(aValue:TJsonObject):IJsonResult;Override;
+    function Data(aValue:TJsonObject):IJsonResult;Override;
+    function ToJson:TJsonObject;
+    function ToString:String;
+
+
+  end;
+
+
+
+
+
+implementation
+
+{ TJsonResult }
+
+constructor TJsonResult.create(aSuccess: Boolean);
+begin
+  FJson:= TJsonObject.Create;
+  FJson.put('success',aSuccess);
+end;
+
+function TJsonResult.Data(aValue: TJsonObject): IJsonResult;
+begin
+
+end;
+
+destructor TJsonResult.destroy;
+begin
+
+  inherited;
+end;
+
+function TJsonResult.Message(aValue: string): IJsonResult;
+begin
+
+end;
+
+class function TJsonResult.new(aSource: Boolean): IJsonResult;
+begin
+
+end;
+
+function TJsonResult.StatusCode(aValue: Integer): IJsonResult;
+begin
+
+end;
+
+function TJsonResult.Success(aValue: Boolean): IJsonResult;
+begin
+
+end;
+
+function TJsonResult.ToJson: TJsonObject;
+begin
+
+end;
+
+function TJsonResult.ToString: String;
+begin
+
+end;
+
+begin
+
+
+end.

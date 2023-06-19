@@ -1,0 +1,64 @@
+unit JsonResult;
+
+{$ifdef fpc }
+    {$mode delphi}
+{$endif}
+
+interface
+uses
+
+{$ifdef fpc}
+ classes,sysutils,
+ {$else}
+ system.Classes,System.SysUtils,
+ {$endif}
+  //J4dl,
+  DataSet.Serialize,
+  system.JSON,
+// vcl.Forms,
+  Horse;
+
+type
+
+  IJsonResult = interface
+      ['{E26EF62A-10FF-4C1F-A839-30A145CC2875}']
+  end;
+
+  TJsonResult =class(TInterfacedObject,IJsonResult)
+ private
+   FJson:TJsonObject;
+  public
+    constructor  create(aSuccess:Boolean);
+    destructor destroy; override;
+    class function new(aSource:Boolean):IJsonResult;
+
+  end;
+
+
+
+
+
+implementation
+
+{ TJsonResult }
+
+constructor TJsonResult.create(aSuccess: Boolean);
+begin
+
+end;
+
+destructor TJsonResult.destroy;
+begin
+
+  inherited;
+end;
+
+class function TJsonResult.new(aSource: Boolean): IJsonResult;
+begin
+
+end;
+
+begin
+
+
+end.

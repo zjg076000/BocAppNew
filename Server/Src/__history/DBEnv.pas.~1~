@@ -1,0 +1,12 @@
+unit DBEnv;
+
+interface
+
+uses
+  system.Classes,system.SysUtils;
+
+const
+   DB
+implementation
+
+end.

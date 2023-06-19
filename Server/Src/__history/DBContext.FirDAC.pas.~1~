@@ -1,0 +1,43 @@
+unit DBContext.FirDAC;
+
+interface
+uses System.Classes,System.SysUtils,db;
+
+Type
+
+  IDBContext = interface
+    ['{688E0613-EFE0-495A-9906-0767E9038774}']
+  end;
+
+  TDBContextFirDAC=class(TInterfacedObject,IDBContext)
+  private
+  public
+    constructor create;
+    destructor Destroy;override;
+    class function New:IDBContext;
+
+
+  end;
+
+
+implementation
+
+{ TDBContextFirDAC }
+
+constructor TDBContextFirDAC.create;
+begin
+
+end;
+
+destructor TDBContextFirDAC.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TDBContextFirDAC.New: IDBContext;
+begin
+
+end;
+
+end.
