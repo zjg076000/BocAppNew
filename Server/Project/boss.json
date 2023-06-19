@@ -1,0 +1,13 @@
+{
+	"name": "Server",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/horse": "^3.1.3",
+		"https://github.com/hafedh-trimeche/json4delphi": ">0.0.0",
+		"https://github.com/viniciussanchez/dataset-serialize": "^v2.4.9"
+	}
+}
