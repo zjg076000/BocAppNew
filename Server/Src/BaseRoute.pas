@@ -12,6 +12,8 @@ uses
 {$ELSE}
   system.classes, system.sysutils,
 {$ENDIF}
+  Jsonresult,
+  jsons,
   Horse;
 
 
@@ -35,9 +37,18 @@ begin
 
 end;
 
+Procedure OnJson(aReq:THorseRequest;aRes:THorseResponse);
+begin
+ aRes.ContentType('text/Json')
+      .send(TJsonResult.new.Message('ddddd')
+      );
+
+end;
+
 class procedure TBase.Route;
 begin
  THorse.Get('/',OnStatus);
+ THorse.Get('/',OnJson);
 
 end;
 
